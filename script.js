@@ -1,3 +1,24 @@
+const renderizacao = (data) => {
+  let mapedData = mapData(data);//mapear o titulo (lista com títulos)
+  console.log('f',mapedData);
+  let htmlElements = createHtmlElements(mapedData); // criar a listagem de título de elementos HTML com create element
+  console.log('r',htmlElements);
+  insertHtmlElements(htmlElements);//inserir elementos HTML criados no HTML
+}
+
+const APIrequest = 'https://ghibliapi.herokuapp.com/films';
+const getData = () => {
+  const myObj = {
+    method: 'GET',
+    headers: { 'Accept': 'text/plain' }
+  };
+
+  fetch(APIrequest, myObj)
+    .then(response => response.json())
+    .then(data => {
+      renderizacao(data);
+  })
+}
 function mapData (data) {
   const mapeamentoApi = data.map((elemento) => {
       return {
@@ -39,9 +60,4 @@ function insertHtmlElements(htmlElements) {
   container[0].innerHTML += htmlElements.innerHTML;
 }
 
-let data = getData();//trás informações da API
-let mapedData = mapData(data);//mapear o titulo (lista com títulos)
-console.log('f',mapedData);
-let htmlElements = createHtmlElements(mapedData); // criar a listagem de título de elementos HTML com create element
-console.log('r',htmlElements);
-insertHtmlElements(htmlElements);//inserir elementos HTML criados no HTML
+getData();//trás informações da API
