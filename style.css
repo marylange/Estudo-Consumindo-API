@@ -1,0 +1,42 @@
+.autor {
+  font-family: "Lucida Console", Courier, monospace;
+}
+
+.descricao {
+  font-family: "Lucida Console", Courier, monospace;
+}
+
+.container {
+  border: 1px solid black;
+  padding: 30px;
+}
+
+.footer {
+  background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+  border: 1px solid black;
+  font-family: "Lucida Console", Courier, monospace;
+  font-size: 15px;
+  text-align: center;
+  padding: 10px;
+}
+
+.titlePage {
+  background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+  border: 1px solid black;
+  font-family: "Lucida Console", Courier, monospace;
+  font-size: 35px;
+  text-align: center;
+  padding: 30px;
+}
+
+.titulo {
+  border: 1px solid black;
+  font-family: "Lucida Console", Courier, monospace;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .itens {
+      flex-direction: column;
+  }
+}
